@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPF_AtviteliSebesseg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_AtviteliSebesseg"
+        mc:Ignorable="d"
+        Title="Atviteli Sebesseg Szamolo" Height="500" Width="1250">
+    <Grid Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label FontSize="25" Margin="40" VerticalAlignment="Center" HorizontalAlignment="Center">Adatmennyiség:</Label>
+        <TextBox x:Name="txtMennyiseg" FontSize="30" Grid.Column="1" Margin="20" VerticalAlignment="Center"></TextBox>
+        <ComboBox x:Name="cbMennyisegMertek" Margin="50" FontSize="30" Grid.Column="2" SelectedIndex="0" VerticalAlignment="Center">
+            <ComboBoxItem Content="KB"/>
+            <ComboBoxItem Content="MB"/>
+            <ComboBoxItem Content="GB"/>
+            <ComboBoxItem Content="TB"/>
+        </ComboBox>
+        <Label FontSize="25" Margin="50" Grid.Row="1" VerticalContentAlignment="Center" HorizontalAlignment="Center">Átviteli sebesség:</Label>
+        <Label x:Name="lblSebesseg" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">0</Label>
+        <Slider x:Name="sliSebesseg" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Minimum="0" Maximum="5000" ValueChanged="sliSebesseg_ValueChanged"/>
+        <ComboBox x:Name="cbSebessegMertek" FontSize="30" Grid.Row="1" Grid.Column="3" Margin="50" SelectedIndex="0" VerticalAlignment="Center">
+            <ComboBoxItem Content="KB/s"/>
+            <ComboBoxItem Content="MB/s"/>
+            <ComboBoxItem Content="GB/s"/>
+        </ComboBox>
+        <Label FontSize="25" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">Átviteli idő:</Label>
+        <Label x:Name="lblIdo" FontSize="30" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">0</Label>
+        <Button x:Name="btnSzamitas" Grid.Row="2" Grid.Column="2" Margin="50" Click="btnSzamitas_Click">Számítás</Button>
+    </Grid>
+</Window>
